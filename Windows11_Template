@@ -1,2 +1,11 @@
 qvm-prefs <wube name> qrexec_timeout 7200
 
+TPM 2 bypass
+When you start setup without having a TPM, you get an error message like This PC does not fulfil the minimum requirements
+for Windows 11.
+Typing Shift-F10 opens a console window.
+Here you type regedit to start the registry editor.
+There you position to the key HKEY_LOCAL_MACHINE\SYSTEM\Setup.
+Now create the key LabConfig.
+Position to this key and create 3 DWORD values called BypassTPMCheck, BypassSecureBootCheck and BypassRAMCheck and set each value to 1.
+Close the registry editor and console windows.
