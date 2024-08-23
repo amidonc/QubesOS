@@ -1,0 +1,22 @@
+QubesOS configuration
+
+  ACPI fix for Reboot & Suspend
+      vim /etc/default/grub
+      add `reboot=acpi` to line `GRUB_CMDLINE_XEN_DEFAULT`
+
+GPU
+&ensp; &ensp; Find out which of intel or fbdev driver is in use:
+&ensp; &ensp; &ensp; &ensp; `grep -E 'LoadModule.*(fbdev|intel)"' /var/log/Xorg.0.log` <br/>
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; eg. for intel: <br/>
+(II) LoadModule: "intel" <br/>
+
+&ensp; &ensp; Create /etc/X11/xorg.conf.d/20-intel.conf with the following content:
+
+              
+              Section "Device"
+              Identifier "Intel Graphics"
+                Driver "Intel"
+                # UXA is more stable than the default SNA for some users
+                Option "AccelMethod" "UXA"
+            EndSection
+            
