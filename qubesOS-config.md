@@ -1,7 +1,7 @@
 ## QubesOS configuration
 
 ### ACPI fix for Reboot & Suspend
-&ensp; &ensp; &ensp; &ensp; `vim /etc/default/grub`
+&ensp; &ensp; &ensp; &ensp; `vim /etc/default/grub`<br/>
 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; added `reboot=acpi` to line `GRUB_CMDLINE_XEN_DEFAULT`
 
 ### GPU
