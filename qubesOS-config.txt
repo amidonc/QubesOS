@@ -18,7 +18,3 @@ Create /etc/X11/xorg.conf.d/20-intel.conf with the following content:
     # UXA is more stable than the default SNA for some users
     Option "AccelMethod" "UXA"  
   EndSection
-  
-Create file 10-i915-xe.conf in /etc/sysctl.d/
-  i915.force_probe=!a7a0
-  xe.force_probe=a7a0
